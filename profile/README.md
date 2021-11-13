@@ -3,6 +3,8 @@
 ## Description
 This library is an abstraction layer for PHP over the Optical Character Recognition engines.
 
+The key feature of the library is that is has no production dependencies. For example, the HTTP-related code is using only [PSR](https://www.php-fig.org/) interfaces and you are free to pick any implementation library and any version of that library thas fits the needs of your project.
+
 ## Usage
 Add the core package to your project.
 ~~~
