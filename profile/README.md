@@ -27,7 +27,7 @@ $text = $engine->process($image);
 ~~~
 
 ## Usage – complete example
-This example uses the HTTP API provided by [https://ocr.space](https://ocr.space/). You will have to acquire an API key to use the following example. 
+This example uses the HTTP API provided by [https://ocr.space](https://ocr.space/). You will have to acquire an API key to use this engine. 
 
 Additionally install any implementation of `psr/http-client`, `psr/http-factory` and `psr/http-factory`. For example, `guzzlehttp/guzzle` and `guzzlehttp/psr7`.
 
@@ -41,7 +41,12 @@ use OCR\Utility\Http\Request\Multipart\GuzzleMultipartFormFactory;
 $httpClient = new Client();
 $requestFactory = new HttpFactory();
 $formFactory = new GuzzleMultipartFormFactory();
-$engine = new OcrSpaceEngine($httpClient, $requestFactory, $formFactory, 'api-key');
+$engine = new OcrSpaceEngine(
+    $httpClient, 
+    $requestFactory, 
+    $formFactory, 
+    'ocr-space-api-key',
+);
 
 $image = new File('input.jpeg');
 
